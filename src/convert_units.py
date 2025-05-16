@@ -44,4 +44,5 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python src/convert_units.py input.json output.json")
         sys.exit(1)
-    convert_units_in_json(sys.argv[1], sys.argv[2], units_config.UNIT_CONVERSIONS)
+    convert_units_in_json
+    (sys.argv[1], sys.argv[2], units_config.UNIT_CONVERSIONS)
