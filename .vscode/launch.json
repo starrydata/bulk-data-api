@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Run extract_property_combinations.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/extract_property_combinations.py",
+      "console": "integratedTerminal"
+    }
+  ]
+}
