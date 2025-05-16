@@ -15,7 +15,7 @@ def main():
     combinations = extract_property_combinations(url)
 
     input_dir = "test_data"
-    output_dir = "dist"
+    output_dir = "dist/v1"
 
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
