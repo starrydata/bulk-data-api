@@ -1,4 +1,8 @@
 UNIT_CONVERSIONS = {
+    # Thermodynamics
+    "Temperature": "K",
+
+    # Battery
     "Discharge capacity": "mAh/g",
     "Charge capacity": "mAh/g",
     "Voltage": "V",
