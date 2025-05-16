@@ -28,6 +28,6 @@ if __name__ == "__main__":
     url = "https://raw.githubusercontent.com/starrydata/starry-visualization/refs/heads/main/all_curves/index.html"
     combos = extract_property_combinations(url)
     for c in combos:
-        print(f"prop_x: {c[0]}, prop_y: {c[1]}, size: {c[2]}")
+        print(f"{c[0]},{c[1]},{c[2]}")
 
 
