@@ -7,6 +7,13 @@
       "request": "launch",
       "program": "${workspaceFolder}/src/extract_property_combinations.py",
       "console": "integratedTerminal"
+    },
+    {
+      "name": "Run convert_all_combinations.py",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/convert_all_combinations.py",
+      "console": "integratedTerminal"
     }
   ]
 }
