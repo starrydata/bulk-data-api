@@ -11,7 +11,7 @@ UNIT_CONVERSIONS = {
     "Time": "h",
 
     # Thermoelectric materials
-    "Seebeck coefficient": "V/K",
+    "Seebeck coefficient": "μV/K",
     "Electrical conductivity": "S/m",
     "Electrical resistivity": "ohm*m",
     "Thermal conductivity": "W/(m*K)",
