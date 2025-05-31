@@ -9,13 +9,13 @@ The output directory is set to `dist/v1`.
 
 ## API Specification
 
-- OpenAPI specification: [openapi.yaml](https://starrydata.github.io/starrydata-bulk-data/v1/openapi.yaml)
-- Example graph data: [Temperature-ZT.json](https://starrydata.github.io/starrydata-bulk-data/v1/Temperature-ZT.json)
-- Graph list: [graph_list.json](https://starrydata.github.io/starrydata-bulk-data/v1/graph_list.json)
+- OpenAPI specification: [openapi.yaml](https://starrydata.github.io/bulk-data-api/v1/openapi.yaml)
+- Example graph data: [Temperature-ZT.json](https://starrydata.github.io/bulk-data-api/v1/Temperature-ZT.json)
+- Graph list: [graph_list.json](https://starrydata.github.io/bulk-data-api/v1/graph_list.json)
 
 ### Endpoints
 
 - `/v1/{prop_x}-{prop_y}.json` : Graph data for the specified property combination (JSON)
 - `/v1/graph_list.json` : List of all graphs and their counts (JSON)
 
-For detailed specifications, see [openapi.yaml](https://starrydata.github.io/starrydata-bulk-data/v1/openapi.yaml).
+For detailed specifications, see [openapi.yaml](https://starrydata.github.io/bulk-data-api/v1/openapi.yaml).

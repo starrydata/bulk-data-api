@@ -4,12 +4,12 @@ info:
   description: |
     This API provides static JSON graph data for all physical property combinations in Starrydata.
     - The list of all graphs and their counts can be accessed at `/v1/graph_list.json`.
-      Example: [graph_list.json](https://starrydata.github.io/starrydata-bulk-data/v1/graph_list.json)
+      Example: [graph_list.json](https://starrydata.github.io/bulk-data-api/v1/graph_list.json)
     - Each graph data can be accessed at `/v1/{prop_x}-{prop_y}.json`.
-      Example: [Temperature-ZT.json](https://starrydata.github.io/starrydata-bulk-data/v1/Temperature-ZT.json)
+      Example: [Temperature-ZT.json](https://starrydata.github.io/bulk-data-api/v1/Temperature-ZT.json)
   version: 1.0.0
 servers:
-  - url: https://starrydata.github.io/starrydata-bulk-data/v1
+  - url: https://starrydata.github.io/bulk-data-api/v1
 paths:
   /graph_list.json:
     get:
