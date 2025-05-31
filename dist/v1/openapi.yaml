@@ -30,12 +30,14 @@ paths:
           required: true
           schema:
             type: string
+            default: Inverse temperature
           description: Name of the property for the X axis
         - name: prop_y
           in: path
           required: true
           schema:
             type: string
+            default: Thermal conductivity
           description: Name of the property for the Y axis
       responses:
         '200':
