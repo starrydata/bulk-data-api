@@ -2,42 +2,44 @@ openapi: 3.0.3
 info:
   title: Cleansing Dataset API
   description: |
-    このAPIは、物性データのグラフデータ(JSON)を静的に提供します。
-    - 各グラフデータは `/v1/{prop_x}-{prop_y}.json` で取得できます。
-    - グラフの一覧と件数は `/v1/graph_list.json` で取得できます。
+    This API provides static JSON graph data for physical property combinations.
+    - Each graph data can be accessed at `/v1/{prop_x}-{prop_y}.json`.
+      Example: [Temperature-ZT.json](https://starrydata.github.io/cleansing-dataset/v1/Temperature-ZT.json)
+    - The list of all graphs and their counts can be accessed at `/v1/graph_list.json`.
+      Example: [graph_list.json](https://starrydata.github.io/cleansing-dataset/v1/graph_list.json)
   version: 1.0.0
 servers:
-  - url: https://{your-github-username}.github.io/cleansing-dataset/v1
+  - url: https://starrydata.github.io/cleansing-dataset/v1
 paths:
   /{prop_x}-{prop_y}.json:
     get:
-      summary: 指定した物性組み合わせのグラフデータを取得
+      summary: Get graph data for a specific property combination
       parameters:
         - name: prop_x
           in: path
           required: true
           schema:
             type: string
-          description: X軸の物性名
+          description: Name of the property for the X axis
         - name: prop_y
           in: path
           required: true
           schema:
             type: string
-          description: Y軸の物性名
+          description: Name of the property for the Y axis
       responses:
         '200':
-          description: グラフデータ(JSON)
+          description: Graph data (JSON)
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/GraphData'
   /graph_list.json:
     get:
-      summary: グラフの一覧と件数を取得
+      summary: Get the list of all graphs and their counts
       responses:
         '200':
-          description: グラフ一覧(JSON)
+          description: List of graphs (JSON)
           content:
             application/json:
               schema:
@@ -49,16 +51,16 @@ components:
       properties:
         prop_x:
           type: string
-          description: X軸の物性名
+          description: Name of the property for the X axis
         prop_y:
           type: string
-          description: Y軸の物性名
+          description: Name of the property for the Y axis
         unit_x:
           type: string
-          description: X軸の単位
+          description: Unit for the X axis
         unit_y:
           type: string
-          description: Y軸の単位
+          description: Unit for the Y axis
         data:
           type: object
           properties:
