@@ -48,3 +48,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Deploy OpenAPI spec and graph list
+        run: |
+          cp dist/v1/openapi.yaml dist/v1/graph_list.json dist/

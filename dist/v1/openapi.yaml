@@ -1,0 +1,92 @@
+openapi: 3.0.3
+info:
+  title: Cleansing Dataset API
+  description: |
+    このAPIは、物性データのグラフデータ(JSON)を静的に提供します。
+    - 各グラフデータは `/v1/{prop_x}-{prop_y}.json` で取得できます。
+    - グラフの一覧と件数は `/v1/graph_list.json` で取得できます。
+  version: 1.0.0
+servers:
+  - url: https://{your-github-username}.github.io/cleansing-dataset/v1
+paths:
+  /{prop_x}-{prop_y}.json:
+    get:
+      summary: 指定した物性組み合わせのグラフデータを取得
+      parameters:
+        - name: prop_x
+          in: path
+          required: true
+          schema:
+            type: string
+          description: X軸の物性名
+        - name: prop_y
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Y軸の物性名
+      responses:
+        '200':
+          description: グラフデータ(JSON)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphData'
+  /graph_list.json:
+    get:
+      summary: グラフの一覧と件数を取得
+      responses:
+        '200':
+          description: グラフ一覧(JSON)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphList'
+components:
+  schemas:
+    GraphData:
+      type: object
+      properties:
+        prop_x:
+          type: string
+          description: X軸の物性名
+        prop_y:
+          type: string
+          description: Y軸の物性名
+        unit_x:
+          type: string
+          description: X軸の単位
+        unit_y:
+          type: string
+          description: Y軸の単位
+        data:
+          type: object
+          properties:
+            x:
+              type: array
+              items:
+                type: array
+                items:
+                  type: number
+            y:
+              type: array
+              items:
+                type: array
+                items:
+                  type: number
+    GraphList:
+      type: object
+      properties:
+        graphs:
+          type: array
+          items:
+            type: object
+            properties:
+              prop_x:
+                type: string
+              prop_y:
+                type: string
+              count:
+                type: integer
+        total:
+          type: integer
