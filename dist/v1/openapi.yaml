@@ -7,7 +7,7 @@ info:
       Example: [graph_list.json](https://starrydata.github.io/bulk-data-api/v1/graph_list.json)
     - Each graph data can be accessed at `/v1/{prop_x}-{prop_y}.json`.
       Example: [Temperature-ZT.json](https://starrydata.github.io/bulk-data-api/v1/Temperature-ZT.json)
-  version: 1.0.0
+  version: 0.0.2
 servers:
   - url: https://starrydata.github.io/bulk-data-api/v1
 paths:
