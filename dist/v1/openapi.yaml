@@ -3,14 +3,24 @@ info:
   title: Cleansing Dataset API
   description: |
     This API provides static JSON graph data for physical property combinations.
-    - Each graph data can be accessed at `/v1/{prop_x}-{prop_y}.json`.
-      Example: [Temperature-ZT.json](https://starrydata.github.io/cleansing-dataset/v1/Temperature-ZT.json)
     - The list of all graphs and their counts can be accessed at `/v1/graph_list.json`.
       Example: [graph_list.json](https://starrydata.github.io/cleansing-dataset/v1/graph_list.json)
+    - Each graph data can be accessed at `/v1/{prop_x}-{prop_y}.json`.
+      Example: [Temperature-ZT.json](https://starrydata.github.io/cleansing-dataset/v1/Temperature-ZT.json)
   version: 1.0.0
 servers:
   - url: https://starrydata.github.io/cleansing-dataset/v1
 paths:
+  /graph_list.json:
+    get:
+      summary: Get the list of all graphs and their counts
+      responses:
+        '200':
+          description: List of graphs (JSON)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GraphList'
   /{prop_x}-{prop_y}.json:
     get:
       summary: Get graph data for a specific property combination
@@ -34,16 +44,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/GraphData'
-  /graph_list.json:
-    get:
-      summary: Get the list of all graphs and their counts
-      responses:
-        '200':
-          description: List of graphs (JSON)
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GraphList'
 components:
   schemas:
     GraphData:
