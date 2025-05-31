@@ -1,6 +1,6 @@
-# Project Description
+# Starrydata Bulk Data API
 
-This project fetches JSON data for various combinations of physical quantities and performs unit conversions.
+This project provides static JSON data for all combinations of physical quantities in Starrydata, including unit conversions.
 
 ## About v1
 
@@ -9,13 +9,13 @@ The output directory is set to `dist/v1`.
 
 ## API Specification
 
-- OpenAPI specification: [openapi.yaml](https://starrydata.github.io/cleansing-dataset/v1/openapi.yaml)
-- Example graph data: [Temperature-ZT.json](https://starrydata.github.io/cleansing-dataset/v1/Temperature-ZT.json)
-- Graph list: [graph_list.json](https://starrydata.github.io/cleansing-dataset/v1/graph_list.json)
+- OpenAPI specification: [openapi.yaml](https://starrydata.github.io/starrydata-bulk-data/v1/openapi.yaml)
+- Example graph data: [Temperature-ZT.json](https://starrydata.github.io/starrydata-bulk-data/v1/Temperature-ZT.json)
+- Graph list: [graph_list.json](https://starrydata.github.io/starrydata-bulk-data/v1/graph_list.json)
 
 ### Endpoints
 
 - `/v1/{prop_x}-{prop_y}.json` : Graph data for the specified property combination (JSON)
 - `/v1/graph_list.json` : List of all graphs and their counts (JSON)
 
-For detailed specifications, see [openapi.yaml](https://starrydata.github.io/cleansing-dataset/v1/openapi.yaml).
+For detailed specifications, see [openapi.yaml](https://starrydata.github.io/starrydata-bulk-data/v1/openapi.yaml).
