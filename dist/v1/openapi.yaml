@@ -61,6 +61,14 @@ components:
         unit_y:
           type: string
           description: Unit for the Y axis
+        updated_at:
+          type: array
+          items:
+            type: string
+            format: date-time
+          description: |
+            List of last update timestamps in ISO 8601 format (e.g., '2019-02-10T04:31:06+09:00').
+            The time zone is always +09:00.
         data:
           type: object
           properties:
