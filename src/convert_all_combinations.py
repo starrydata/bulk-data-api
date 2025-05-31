@@ -36,5 +36,17 @@ def main():
         else:
             print(f"Failed to fetch {json_url} with status code {response.status_code}")
 
+    # graph_list.jsonの生成
+    graph_list = []
+    for prop_x, prop_y, size in combinations:
+        graph_list.append({"prop_x": prop_x, "prop_y": prop_y, "count": size})
+    graph_list_json = {
+        "graphs": graph_list,
+        "total": len(graph_list)
+    }
+    with open(os.path.join(output_dir, "graph_list.json"), "w", encoding="utf-8") as f:
+        import json
+        json.dump(graph_list_json, f, ensure_ascii=False, indent=2)
+
 if __name__ == "__main__":
     main()
