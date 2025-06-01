@@ -51,10 +51,12 @@ def convert_units_in_json(input_path: str, output_path: str, unit_map: dict):
             raise ValueError(f"Could not parse updated_at date string: {js_date_str}")
     if js_date_val is not None:
         if isinstance(js_date_val, list):
-            data['updated_at'] = [js_to_iso(s) for s in js_date_val]
+            data['data']['updated_at'] = [js_to_iso(s) for s in js_date_val]
         else:
             raise TypeError(f"updated_at must be a list of strings, got {type(js_date_val)}")
-
+    else:
+        # エラー
+        raise KeyError("updated_at field is missing in the input data")
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
@@ -64,5 +66,4 @@ if __name__ == "__main__":
     if len(sys.argv) != 3:
         print("Usage: python src/convert_units.py input.json output.json")
         sys.exit(1)
-    convert_units_in_json
-    (sys.argv[1], sys.argv[2], units_config.UNIT_CONVERSIONS)
+    convert_units_in_json(sys.argv[1], sys.argv[2], units_config.UNIT_CONVERSIONS)
