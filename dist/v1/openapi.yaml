@@ -51,6 +51,18 @@ components:
     GraphData:
       type: object
       properties:
+        SID:
+          type: string
+          description: Starrydata unique ID (uppercase)
+        figure_id:
+          type: string
+          description: Figure ID
+        sample_id:
+          type: string
+          description: Sample ID
+        composition:
+          type: string
+          description: Chemical composition
         prop_x:
           type: string
           description: Name of the property for the X axis

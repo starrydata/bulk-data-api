@@ -6,6 +6,13 @@ def convert_units_in_json(input_path: str, output_path: str, unit_map: dict):
     input_path: 入力jsonファイルパス
     output_path: 出力jsonファイルパス
     unit_map: 物理量名 -> 変換先単位の辞書
+
+    出力JSONには以下のフィールドが含まれます:
+      - SID (StarrydataID, 大文字)
+      - figure_id
+      - sample_id
+      - composition
+    これらは入力JSONに既に含まれている場合、そのまま出力されます。
     """
     ureg = UnitRegistry()
     with open(input_path, 'r', encoding='utf-8') as f:
@@ -57,6 +64,7 @@ def convert_units_in_json(input_path: str, output_path: str, unit_map: dict):
     else:
         # エラー
         raise KeyError("updated_at field is missing in the input data")
+    # (SID, figure_id, sample_id, compositionは入力にあればそのまま出力されます)
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
