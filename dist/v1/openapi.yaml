@@ -84,8 +84,8 @@ components:
                 type: string
                 format: date-time
               description: |
-                List of last update timestamps in ISO 8601 format (e.g., '2019-02-10T04:31:06+09:00').
-                The time zone is always +09:00.
+                List of last update timestamps in ISO 8601 format (e.g., '2025-04-25T11:01:09+09:00').
+                The time zone is always +09:00 (JST: Japan Standard Time).
             x:
               type: array
               items:
